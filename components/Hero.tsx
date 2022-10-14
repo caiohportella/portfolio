@@ -20,7 +20,7 @@ const Hero = (props: Props) => {
       <div className="relative rounded-full h-32 w-32 mx-auto object-cover overflow-hidden">
         <Image
             src={profile}
-            layout="fill"
+            layout="responsive"
             objectFit="cover"
             alt="profile pic"
           />
