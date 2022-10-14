@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import profile from "../public/images/profile.jpg";
 
 type Props = {};
 
@@ -18,7 +19,7 @@ const Hero = (props: Props) => {
       <BackgroundCircles />
       <div className="relative rounded-full h-32 w-32 mx-auto object-cover overflow-hidden">
         <Image
-            src="https://github.com/caiohportella.png"
+            src={profile}
             layout="fill"
             objectFit="cover"
             alt="profile pic"
