@@ -19,7 +19,9 @@ const Hero = (props: Props) => {
       <div className="relative rounded-full h-32 w-32 mx-auto object-cover overflow-hidden">
         <Image
             src="/images/pp.jpg"
-            layout="responsive"
+            // layout="responsive"
+            width={724}
+            height={965}
             objectFit="cover"
             alt="profile pic"
           />
@@ -50,9 +52,9 @@ const Hero = (props: Props) => {
                 <Link href="#projects">
                     <button className="heroButton">Projetos</button>
                 </Link>       
-                <Link href="/CV.pdf" download>
+                <a href="/CV.pdf" download>
                   <button className="heroButton">Baixar CV</button>
-                </Link>
+                </a>
             </div>
           </div>
     </div>

@@ -18,14 +18,14 @@ const Skills = () => {
       }}
       className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:p-10 min-h-screen justify-center xl:space-y-0 items-center mx-auto"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-24 z-1 uppercase tracking-[20px] text-gray-500 text-2xl">
         Habilidades
       </h3>
-      <h3 className="absolute top-36 ippercase tracking-[3px] text-gray-500 text-sm">
+      <h3 className="absolute top-36 z-1 uppercase tracking-[3px] text-gray-500 text-sm">
         Passe o mouse por cima de uma habilidade
       </h3>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-4 gap-5 z-0">
         <Skill level="80%" img="/images/js.png" />
         <Skill level="80%" img="/images/typescript.png" />
         <Skill level="80%" img="/images/html.png" />
@@ -42,8 +42,8 @@ const Skills = () => {
         <Skill level="65%" img="/images/git.png" />
         <Skill level="80%" img="/images/github.png" />
         <Skill level="50%" img="/images/golang.png" />
-        <Skill level="75%" img="/images/flutter.png" />
-        <Skill level="75%" img="/images/dart.png" />
+        <Skill level="80%" img="/images/flutter.png" />
+        <Skill level="80%" img="/images/dart.png" />
       </div>
     </motion.div>
   );
