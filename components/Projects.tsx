@@ -2,16 +2,16 @@
 import { StaticImageData } from "next/image";
 import React from "react";
 
-// type ProjectsProps = {
-//   projects: {
-//     id: number;    
-//     src: string | StaticImageData,
-//     title: string,
-//     description: string,
-//   };
-// };
+type ProjectsProps = {
+  projects: {
+    id: number;    
+    src: string | StaticImageData,
+    title: string,
+    description: string,
+  };
+};
 
-const Projects = () => {
+const Projects = (props: ProjectsProps) => {
   const projects = [ 
     {
       id: 1,
