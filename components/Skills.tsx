@@ -42,6 +42,8 @@ const Skills = () => {
         <Skill level="65%" img="/images/git.png" />
         <Skill level="80%" img="/images/github.png" />
         <Skill level="50%" img="/images/golang.png" />
+        <Skill level="75%" img="/images/flutter.png" />
+        <Skill level="75%" img="/images/dart.png" />
       </div>
     </motion.div>
   );

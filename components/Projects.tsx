@@ -25,6 +25,12 @@ const Projects = (props: ProjectsProps) => {
       title: "Next Level Week - eSports",
       description: "É um projeto desenvolvido durante a Next Level Week da Rocketseat com ReactJS, TypeScript e SQLite, onde o usuário pode escolher o jogo que deseja jogar com amigos e criar um anúncio para encontrar outros jogadores.",
     },
+    {
+      id: 3,
+      src: "/images/mycash.png",
+      title: "MyCash",
+      description: "É um app para controle de gastos, onde o usuário pode cadastrar ações bancárias atreladas a uma categoria e realizar pesquisas de transações por filtros, simulando uma conta bancária.",
+    }
   ]
   
   return (

@@ -50,7 +50,7 @@ const Hero = (props: Props) => {
                 <Link href="#projects">
                     <button className="heroButton">Projetos</button>
                 </Link>       
-                <Link href="/CV.pdf" download={true} >
+                <Link href="/CV.pdf" download>
                   <button className="heroButton">Baixar CV</button>
                 </Link>
             </div>
