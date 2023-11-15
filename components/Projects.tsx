@@ -2,29 +2,26 @@
 import { StaticImageData } from "next/image";
 import React from "react";
 
-import orderapp from "../public/images/orderapp-resize.png";
-import nlw from "../public/images/nlw.jpg";
+// type ProjectsProps = {
+//   projects: {
+//     id: number;    
+//     src: string | StaticImageData,
+//     title: string,
+//     description: string,
+//   };
+// };
 
-type ProjectsProps = {
-  projects: {
-    id: number;    
-    src: string | StaticImageData,
-    title: string,
-    description: string,
-  };
-};
-
-const Projects = (props: ProjectsProps) => {
-  const projects = [
+const Projects = () => {
+  const projects = [ 
     {
       id: 1,
-      src: orderapp,
+      src: "/images/orderapp-resize.png",
       title: "Order App",
       description: "É um app para pedidos de comida, onde o usuário pode escolher o prato e a quantidade de pratos que deseja. O app também possui um sistema de carrinho de compras.",
     },
     {
       id: 2,
-      src: nlw,
+      src: "/images/nlw.jpg",
       title: "Next Level Week - eSports",
       description: "É um projeto desenvolvido durante a Next Level Week da Rocketseat com ReactJS, TypeScript e SQLite, onde o usuário pode escolher o jogo que deseja jogar com amigos e criar um anúncio para encontrar outros jogadores.",
     },
@@ -40,7 +37,7 @@ const Projects = (props: ProjectsProps) => {
         {projects.map((project, index) => (
           <div key={project.id}>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
-              <img src={project.src.src} alt="" width={600} height={600} />
+              <img src={project.src} alt="" width={600} height={600} />
               <div className="space-y-10 px-0 md:px-10 max-w-6xl" >
                 <h4 className="text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50">

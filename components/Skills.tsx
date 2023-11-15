@@ -4,7 +4,7 @@ import Skill from "./Skill";
 
 type Props = {};
 
-const Skills = (props: Props) => {
+const Skills = () => {
   return (
     <motion.div
       initial={{
@@ -29,7 +29,7 @@ const Skills = (props: Props) => {
         <Skill level="80%" img="/images/js.png" />
         <Skill level="80%" img="/images/typescript.png" />
         <Skill level="80%" img="/images/html.png" />
-        <Skill level="50%%" img="/images/css.png" />
+        <Skill level="50%" img="/images/css.png" />
         <Skill level="80%" img="/images/bootstrap.png" />
         <Skill level="65%" img="/images/react.png" />
         <Skill level="55%" img="/images/tailwind2.png" />
@@ -41,6 +41,7 @@ const Skills = (props: Props) => {
         <Skill level="80%" img="/images/python.png" />
         <Skill level="65%" img="/images/git.png" />
         <Skill level="80%" img="/images/github.png" />
+        <Skill level="50%" img="/images/golang.png" />
       </div>
     </motion.div>
   );

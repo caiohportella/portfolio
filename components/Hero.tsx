@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import profile from "../public/images/profile.jpg";
 
 type Props = {};
 
@@ -19,7 +18,7 @@ const Hero = (props: Props) => {
       <BackgroundCircles />
       <div className="relative rounded-full h-32 w-32 mx-auto object-cover overflow-hidden">
         <Image
-            src={profile}
+            src="/images/pp.jpg"
             layout="responsive"
             objectFit="cover"
             alt="profile pic"
@@ -51,7 +50,7 @@ const Hero = (props: Props) => {
                 <Link href="#projects">
                     <button className="heroButton">Projetos</button>
                 </Link>       
-                <Link href="/cv.pdf" download={true} >
+                <Link href="/CV.pdf" download={true} >
                   <button className="heroButton">Baixar CV</button>
                 </Link>
             </div>
