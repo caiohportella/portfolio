@@ -16,10 +16,10 @@ const Skill = (props: Props) => {
             opacity: 0,
         }}
         transition={{
-            duration: 0.5,
+            duration: 0.8,
         }}
         whileInView={{
-            opacity: 1,
+            opacity: 1.5,
             x: 0,
         }}
         src={props.img} height={100} width={100}
