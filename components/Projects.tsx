@@ -30,6 +30,12 @@ const Projects = (props: ProjectsProps) => {
       src: "/images/mycash.png",
       title: "MyCash",
       description: "É um app para controle de gastos, onde o usuário pode cadastrar ações bancárias atreladas a uma categoria e realizar pesquisas de transações por filtros, simulando uma conta bancária.",
+    },
+    {
+      id: 4,
+      src: "/images/kafka.png",
+      title: "Message Oriented Middleware",
+      description: "POC desenvolvida para aprendizado de uma implementação de um sistema de fila de mensageria Kafka, que tem em sua arquitetura um Producer, um Consumer e um Broker, fazendo a utilização de REST APIs e Webhooks.",
     }
   ]
   
