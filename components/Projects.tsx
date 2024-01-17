@@ -16,7 +16,7 @@ const Projects = (props: ProjectsProps) => {
     {
       id: 1,
       src: "/images/orderapp-resize.png",
-      title: "Order App",
+      title: "React Meals",
       description: "É um app para pedidos de comida, onde o usuário pode escolher o prato e a quantidade de pratos que deseja. O app também possui um sistema de carrinho de compras.",
     },
     {
