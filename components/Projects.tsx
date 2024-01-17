@@ -33,6 +33,12 @@ const Projects = (props: ProjectsProps) => {
     },
     {
       id: 4,
+      src: "/images/social-media-app.png",
+      title: "Snapgram",
+      description: "É um app de rede social similar ao Instagram, onde o usuário pode criar uma conta, postar, curtir e salvar fotos de outros usuários, assim como as funcionabilidades de pessoas relevantes e pesquisa de posts.",
+    },
+    {
+      id: 4,
       src: "/images/kafka.png",
       title: "Message Oriented Middleware",
       description: "POC desenvolvida para aprendizado de uma implementação de um sistema de fila de mensageria Kafka, que tem em sua arquitetura um Producer, um Consumer e um Broker, fazendo a utilização de REST APIs e Webhooks.",
