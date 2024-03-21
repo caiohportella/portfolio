@@ -1,17 +1,36 @@
-import type { NextPage } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import About from "../components/About";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import Courses from "../components/Courses";
+import Experiences from "../components/Experiences";
 import { motion } from "framer-motion";
 import { HydrationProvider, Client } from "react-hydration-provider";
 import { Suspense } from "react";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSocials } from "../utils/fetchSocials";
+import { fetchExperiences } from "../utils/fetchExperience";
+import { Course, Experience, PageInfo, Project, Skill, Social } from "../typings";
+import { fetchCourses } from "../utils/fetchCourses";
+import Link from "next/link";
+import { HomeIcon, HomeModernIcon } from "@heroicons/react/24/solid";
 
-const Home: NextPage = () => {
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  courses: Course[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+};
+
+const Home = ({ pageInfo, experiences, courses, skills, projects, socials }: Props) => {
   return (
     <HydrationProvider>
       <Suspense fallback={<div>Loading...</div>}> </Suspense>
@@ -25,61 +44,59 @@ const Home: NextPage = () => {
             <link rel="icon" href="/react.ico" />
           </Head>
 
-          <Header />
+          <Header socials={socials} />
 
           <section id="hero" className="snap-start">
-            <Hero />
+            <Hero pageInfo={pageInfo} />
           </section>
 
           <section id="about" className="snap-center">
-            <About />
+            <About pageInfo={pageInfo} />
           </section>
 
           <section id="experience" className="snap-center">
-            <Experience />
+            <Experiences experiences={experiences} />
+          </section>
+
+          <section id="courses" className="snap-center">
+            <Courses courses={courses} />
           </section>
 
           <section id="skills" className="snap-start">
-            <Skills />
+            <Skills skills={skills} />
           </section>
 
           <section id="projects" className="snap-start">
             <Projects
-              projects={{
-                id: 0,
-                src: "",
-                title: "",
-                description: "",
-              }}
+              projects={projects}
             />
           </section>
 
           <section id="contact" className="snap-start">
             <Contact name={""} email={""} subject={""} message={""} />
           </section>
-
-          <footer className="sticky bottom-5 w-full">
+          
+          <Link href={'#hero'}>
+          <footer className="sticky bottom-5 w-full cursor-pointer">
             <div className="flex items-center justify-center">
-                  <motion.img
-                    initial={{
-                      opacity: 0,
-                    }}
-                    animate={{
-                      opacity: 1,
-                    }}
-                    transition={{
-                      duration: 1.2,
-                      delay: 0.5,
-                    }}
-                    src={"/images/react.png"}
-                    alt=""
-                    className="w-8 h-8 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-                    onClick={() => {
-                      window.location.href = "#hero";
-                    }}
-                  />
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.5,
+                }}
+                className="h-8 w-8 rounded-full flex items-center justify-center"
+              >
+                <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-[#F7AB0A] animate-pulse" />
+              </motion.div>
             </div>
           </footer>
+          </Link>
         </div>
       </Client>
     </HydrationProvider>
@@ -87,3 +104,24 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const courses: Course[] = await fetchCourses();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      courses,
+      skills,
+      projects,
+      socials,
+    },
+    revalidate: 60,
+  };
+};

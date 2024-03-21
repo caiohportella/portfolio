@@ -1,50 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { StaticImageData } from "next/image";
 import React from "react";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type ProjectsProps = {
-  projects: {
-    id: number;    
-    src: string | StaticImageData,
-    title: string,
-    description: string,
-  };
+type Props = {
+  projects: Project[];
 };
 
-const Projects = (props: ProjectsProps) => {
-  const projects = [ 
-    {
-      id: 1,
-      src: "/images/orderapp-resize.png",
-      title: "React Meals",
-      description: "É um app para pedidos de comida, onde o usuário pode escolher o prato e a quantidade de pratos que deseja. O app também possui um sistema de carrinho de compras.",
-    },
-    {
-      id: 2,
-      src: "/images/nlw.jpg",
-      title: "Next Level Week - eSports",
-      description: "É um projeto desenvolvido durante a Next Level Week da Rocketseat com ReactJS, TypeScript e SQLite, onde o usuário pode escolher o jogo que deseja jogar com amigos e criar um anúncio para encontrar outros jogadores.",
-    },
-    {
-      id: 3,
-      src: "/images/mycash.png",
-      title: "MyCash",
-      description: "É um app para controle de gastos, onde o usuário pode cadastrar ações bancárias atreladas a uma categoria e realizar pesquisas de transações por filtros, simulando uma conta bancária.",
-    },
-    {
-      id: 4,
-      src: "/images/social-media-app.png",
-      title: "Snapgram",
-      description: "É um app de rede social similar ao Instagram, onde o usuário pode criar uma conta, postar, curtir e salvar fotos de outros usuários, assim como as funcionabilidades de pessoas relevantes e pesquisa de posts.",
-    },
-    {
-      id: 4,
-      src: "/images/kafka.png",
-      title: "Message Oriented Middleware",
-      description: "POC desenvolvida para aprendizado de uma implementação de um sistema de fila de mensageria Kafka, que tem em sua arquitetura um Producer, um Consumer e um Broker, fazendo a utilização de REST APIs e Webhooks.",
-    }
-  ]
-  
+const Projects = ({ projects }: Props) => {
   return (
     <div className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -53,24 +17,42 @@ const Projects = (props: ProjectsProps) => {
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-amber-400/40">
         {projects.map((project, index) => (
-          <div key={project.id}>
+          <div key={project._id}>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
-              <img src={project.src} alt="" width={600} height={600} />
-              <div className="space-y-10 px-0 md:px-10 max-w-6xl" >
+              <img
+                src={urlFor(project?.image).url()}
+                alt=""
+                width={600}
+                height={600}
+                className="h-28 xl:h-80 md:h-72 object-contain"
+              />
+              <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                 <h4 className="text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50">
                     Projeto {index + 1} de {projects.length}:
                   </span>{" "}
-                  {project.title}
+                  {project?.title}
                 </h4>
 
-                <p className="text-lg text-center md:text-left" >
-                  {project.description}
+                <div className="flex items-center space-x-2 justify-center">
+                  {project?.technologies.map((technology) => (
+                    <img
+                      key={technology._id}
+                      className="h-10 w-10 rounded-full object-cover"
+                      src={urlFor(technology?.image).url()}
+                      alt=""
+                    />
+                  ))}
+                </div>
+
+                <p className="text-lg text-center md:text-left">
+                  {project?.summary}
                 </p>
               </div>
             </div>
           </div>
-        ))};
+        ))}
+        ;
       </div>
 
       <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"></div>

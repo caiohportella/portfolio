@@ -11,14 +11,19 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.12",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.35.1",
     "framer-motion": "^7.5.3",
     "next": "^14.0.2",
+    "next-sanity": "^7.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.37.0",
     "react-hydration-provider": "^2.1.0",
     "react-simple-typewriter": "^4.0.5",
     "react-social-icons": "^5.15.0",
+    "sanity": "^3.35.1",
+    "styled-components": "^6.1.8",
     "swiper": "^8.4.3"
   },
   "devDependencies": {

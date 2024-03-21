@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import React from "react";
-import picture from "../public/images/aboutpic.jpg";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+}
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
+
   return (
     <motion.div
       initial={{
@@ -34,26 +38,22 @@ const About = (props: Props) => {
         transition={{
           duration: 1.2,
         }}
-        src={picture.src}
+        viewport={{ once: true }}
+        src={urlFor(pageInfo?.profilePic).url()}
         alt="Caio Portella"
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
 
-      <div className="space-y-10 px-0 md:px-10">
+      <div className="space-y-10 md:px-10">
         <h4 className="text-4xl font-semibold">
           Conheça{" "}
-          <span className="underline decoration-[#F7AB0A]/50">um pouco mais</span>{" "}
+          <span className="underline decoration-[#F7AB0A]/50">
+            um pouco mais
+          </span>{" "}
           sobre mim
         </h4>
-        <p className="text-base">
-          Sou graduando em Ciência da Computação pela PUCSP procurando por
-          experiências profissionais e aprendizado. Tenho amplo interesse em
-          tecnologia, assim em como todas as portas que ela pode abrir. <br /><br />
-          Sou
-          apaixonado por música, especialmente rock e metal. Também toco
-          guitarra em uma banda chamada Exorcise. Além de música, xadrez, video
-          games e livros são meus hobbies favoritos. Ademais, eu ocasionalmente
-          escrevo narrativas e poemas autorais no Instagram. 
+        <p className="text-base max-h-fit">
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>

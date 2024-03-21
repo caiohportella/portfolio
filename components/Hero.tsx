@@ -2,16 +2,19 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import profile from "../public/images/pp.jpg";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const Hero = (props: Props) => {
+const Hero = ({ pageInfo }: Props) => {
   const [text] = useTypewriter({
     words: [
-      "Olá! Sou o Caio H. Portella",
-      "Desenvolvedor Frontend",
+      `Olá! Sou o ${pageInfo?.name}`,
+      "Desenvolvedor Fullstack",
       "Desenvolvedor Mobile",
     ],
     loop: true,
@@ -21,7 +24,7 @@ const Hero = (props: Props) => {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <div className="relative bottom-[3rem] h-32 w-32 mx-auto overflow">
+      <div className="relative bottom-[1rem] mx-auto overflow">
         <motion.img
           initial={{
             y: -400,
@@ -34,15 +37,15 @@ const Hero = (props: Props) => {
           transition={{
             duration: 1.2,
           }}
-          src={profile.src}
+          src={urlFor(pageInfo?.heroImage).url()}
           alt="profile pic"
-          className="rounded-full object-cover"
+          className="h-32 w-32 rounded-full object-cover"
         />
       </div>
 
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Estudante de Ciência da Computação
+          {pageInfo?.role}
         </h2>
         <h1 className="text-5xl lg:6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
@@ -58,16 +61,20 @@ const Hero = (props: Props) => {
             <button className="heroButton">Experiência</button>
           </Link>
 
-          <Link href="#skills">
+          <Link href="#courses">
             <button className="heroButton">Cursos</button>
+          </Link>
+
+          <Link href="#skills">
+            <button className="heroButton">Habilidades</button>
           </Link>
 
           <Link href="#projects">
             <button className="heroButton">Projetos</button>
           </Link>
-          <a href="/CV.pdf" download>
+          <Link href="/CV.pdf" target={"_blank"} download>
             <button className="heroButton">Baixar CV</button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

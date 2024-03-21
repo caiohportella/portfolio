@@ -21,15 +21,15 @@ const Contact = (props: Inputs) => {
         Contato
       </h3>
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 2xl:space-y-10">
+        <h4 className="text-4xl font-semibold text-center mt-10 mb-2">
           Ficou interessado?{" "}
           <span className="decoration-[#F7AB0A]/50 underline">
             Mande uma mensagem
           </span>
         </h4>
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
             <p className="text-2xl">(11) 93018-0307</p>
@@ -48,9 +48,9 @@ const Contact = (props: Inputs) => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 w-80 md:w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className=" flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
             <input
               {...register("name")}
               className="contactInput"
@@ -79,7 +79,7 @@ const Contact = (props: Inputs) => {
           />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#F7AB0A] py-3 md:py-5 px-10 rounded-md text-black font-bold text-lg"
           >
             Enviar
           </button>
