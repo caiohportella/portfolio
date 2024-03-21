@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { StaticImageData } from "next/image";
 import React from "react";
-import { Project } from "../typings";
+import { Project as ProjectType } from "../typings";
 import { urlFor } from "../sanity";
 
 type Props = {
-  projects: Project[];
+  projects: ProjectType[];
 };
 
 const Projects = ({ projects }: Props) => {

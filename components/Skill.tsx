@@ -1,11 +1,11 @@
 import React from "react";
-import { Skill } from "../typings";
+import { Skill as SkillType } from "../typings";
 import { urlFor } from "../sanity";
 import Image from "next/image";
 
 type Props = {
   directionLeft?: boolean;
-  skill: Skill;
+  skill: SkillType;
 };
 
 const Skill = ({ directionLeft, skill }: Props) => {

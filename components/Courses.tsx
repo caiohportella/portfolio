@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import CoursesCard from "./CoursesCard";
-import { Course } from "../typings";
+import { Course as CourseType } from "../typings";
 
 type Props = {
-  courses: Course[];
+  courses: CourseType[];
 };
 
 const Courses = ({ courses }: Props) => {

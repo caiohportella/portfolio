@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Course } from "../typings";
+import { Course as CourseType } from "../typings";
 import { urlFor } from "../sanity";
 import { formatCourseDate } from "../utils/formatDate";
 
 type Props = {
-  course: Course;
+  course: CourseType;
 };
 
 const CoursesCard = ({ course }: Props) => {

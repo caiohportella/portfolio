@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { PageInfo } from "../typings";
+import { PageInfo as PageInfoType } from "../typings";
 import { urlFor } from "../sanity";
 
 type Props = {
-  pageInfo: PageInfo;
+  pageInfo: PageInfoType;
 }
 
 const About = ({ pageInfo }: Props) => {

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Experience } from "../typings";
+import { Experience as ExperienceType } from "../typings";
 import { urlFor } from "../sanity";
 import formatDate from "../utils/formatDate";
 
 type Props = {
-  experience: Experience;
+  experience: ExperienceType;
 };
 
 const ExperienceCard = ({ experience }: Props) => {
