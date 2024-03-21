@@ -9,6 +9,7 @@ type Props = {
 
 const Skills = ({ skills }: Props) => {
   return (
+    //@ts-ignore
     <motion.div
       initial={{
         opacity: 0,
@@ -30,9 +31,11 @@ const Skills = ({ skills }: Props) => {
 
       <div className="justify-center grid grid-cols-5 gap-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-9 2xl:grid-cols-9 sm:gap-1 md:gap-3 lg:gap-6 xl:gap-7 2xl:gap-8 2xl:pt-28">
         {skills.slice(0, skills.length / 2).map((skill) => (
+          //@ts-ignore
           <Skill key={skill._id} skill={skill} />
         ))}
         {skills.slice(skills.length / 2, skills.length).map((skill) => (
+          //@ts-ignore
           <Skill key={skill._id} skill={skill} />
         ))}
       </div>

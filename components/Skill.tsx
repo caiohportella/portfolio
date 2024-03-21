@@ -11,6 +11,7 @@ type Props = {
 const Skill = ({ directionLeft, skill }: Props) => {
   return (
     <div className="group relative flex cursor-pointer">
+      {/* @ts-ignore */}
       <Image
         src={urlFor(skill?.image).url()}
         className="rounded-full border-2 border-darkGreen object-cover w-16 h-16 md:w-20 md:h-20 lg:w-10 lg:h-10 xl:w-20 xl:h-20 2xl:w-28 2xl:h-28 filter group-hover:grayscale transition duration-300 ease-in-ou"

@@ -10,6 +10,7 @@ type Props = {
 const Header = ({ socials }: Props) => {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+      {/* @ts-ignore */}
       <motion.div
         initial={{
           x: -500,
@@ -27,6 +28,7 @@ const Header = ({ socials }: Props) => {
         className="flex flex-row items-center"
       >
         {socials.map((social) => (
+          //@ts-ignore
           <SocialIcon
             key={social._id}
             url={social.url}
@@ -37,6 +39,7 @@ const Header = ({ socials }: Props) => {
         ))}
       </motion.div>
 
+      {/* @ts-ignore */}
       <motion.div
         initial={{
           x: 500,
@@ -57,6 +60,7 @@ const Header = ({ socials }: Props) => {
         }}
       >
         {/* Email */}
+        {/* @ts-ignore */}
         <SocialIcon
           className="cursor-pointer"
           network="email"

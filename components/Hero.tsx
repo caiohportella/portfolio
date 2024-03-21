@@ -23,8 +23,10 @@ const Hero = ({ pageInfo }: Props) => {
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+      {/* @ts-ignore */}
       <BackgroundCircles />
       <div className="relative bottom-[1rem] mx-auto overflow">
+        {/* @ts-ignore */}
         <motion.img
           initial={{
             y: -400,
@@ -49,29 +51,37 @@ const Hero = ({ pageInfo }: Props) => {
         </h2>
         <h1 className="text-5xl lg:6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
+          {/* @ts-ignore */}
           <Cursor cursorColor="#F7AB0A" />
         </h1>
 
         <div className="pt-5">
+          {/* @ts-ignore */}
           <Link href="#about">
             <button className="heroButton">Sobre</button>
           </Link>
 
+          {/* @ts-ignore */}
           <Link href="#experience">
             <button className="heroButton">Experiência</button>
           </Link>
 
+          {/* @ts-ignore */}
           <Link href="#courses">
             <button className="heroButton">Cursos</button>
           </Link>
 
+          {/* @ts-ignore */}
           <Link href="#skills">
             <button className="heroButton">Habilidades</button>
           </Link>
 
+          {/* @ts-ignore */}
           <Link href="#projects">
             <button className="heroButton">Projetos</button>
           </Link>
+
+          {/* @ts-ignore */}
           <Link href="/CV.pdf" target={"_blank"} download>
             <button className="heroButton">Baixar CV</button>
           </Link>

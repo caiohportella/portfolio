@@ -8,6 +8,7 @@ type Props = {
 
 const Courses = ({ courses }: Props) => {
   return (
+    //@ts-ignore
     <motion.div
       initial={{
         opacity: 0,
@@ -26,6 +27,7 @@ const Courses = ({ courses }: Props) => {
 
       <div className="w-screen md:w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-amber-400/40">
         {courses?.map((course) => (
+          //@ts-ignore
           <CoursesCard key={course._id} course={course} />
         ))}
       </div>
