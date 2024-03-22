@@ -26,7 +26,6 @@ const About = ({ pageInfo }: Props) => {
         Sobre
       </h3>
 
-      {/*   */}
       <motion.img
         initial={{
           x: -200,

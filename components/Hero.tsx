@@ -23,10 +23,8 @@ const Hero = ({ pageInfo }: Props) => {
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-      {/*   */}
       <BackgroundCircles />
       <div className="relative bottom-[1rem] mx-auto overflow">
-        {/*   */}
         <motion.img
           initial={{
             y: -400,
@@ -51,37 +49,30 @@ const Hero = ({ pageInfo }: Props) => {
         </h2>
         <h1 className="text-5xl lg:6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
-          {/*   */}
           <Cursor cursorColor="#F7AB0A" />
         </h1>
 
         <div className="pt-5">
-          {/*   */}
           <Link href="#about">
             <button className="heroButton">Sobre</button>
           </Link>
 
-          {/*   */}
           <Link href="#experience">
             <button className="heroButton">Experiência</button>
           </Link>
 
-          {/*   */}
           <Link href="#courses">
             <button className="heroButton">Cursos</button>
           </Link>
 
-          {/*   */}
           <Link href="#skills">
             <button className="heroButton">Habilidades</button>
           </Link>
 
-          {/*   */}
           <Link href="#projects">
             <button className="heroButton">Projetos</button>
           </Link>
 
-          {/*   */}
           <Link href="/CV.pdf" target={"_blank"} download>
             <button className="heroButton">Baixar CV</button>
           </Link>

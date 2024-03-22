@@ -8,7 +8,6 @@ type Props = {
 
 const Experience = ({ experiences }: Props) => {
   return (
-    // 
     <motion.div
       initial={{
         opacity: 0,
@@ -27,7 +26,6 @@ const Experience = ({ experiences }: Props) => {
 
       <div className="justify-center flex w-screen space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-amber-400/40">
         {experiences?.map((experience) => (
-          // 
           <ExperiencesCard key={experience._id} experience={experience} />
         ))}
       </div>

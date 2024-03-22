@@ -9,7 +9,6 @@ type Props = {
 
 const Skills = ({ skills }: Props) => {
   return (
-    // 
     <motion.div
       initial={{
         opacity: 0,

@@ -15,7 +15,14 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
 import { fetchExperiences } from "../utils/fetchExperience";
-import { Course, Experience, PageInfo, Project, Skill, Social } from "../typings";
+import {
+  Course,
+  Experience,
+  PageInfo,
+  Project,
+  Skill,
+  Social,
+} from "../typings";
 import { fetchCourses } from "../utils/fetchCourses";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
@@ -30,7 +37,14 @@ type Props = {
   socials: Social[];
 };
 
-const Home = ({ pageInfo, experiences, courses, skills, projects, socials }: Props) => {
+const Home = ({
+  pageInfo,
+  experiences,
+  courses,
+  skills,
+  projects,
+  socials,
+}: Props) => {
   return (
     <HydrationProvider>
       <Suspense fallback={<div>Loading...</div>}> </Suspense>
@@ -67,35 +81,33 @@ const Home = ({ pageInfo, experiences, courses, skills, projects, socials }: Pro
           </section>
 
           <section id="projects" className="snap-start">
-            <Projects
-              projects={projects}
-            />
+            <Projects projects={projects} />
           </section>
 
           <section id="contact" className="snap-start">
             <Contact name={""} email={""} subject={""} message={""} />
           </section>
-          
-          <Link href={'#hero'}>
-          <footer className="sticky bottom-5 w-full cursor-pointer">
-            <div className="flex items-center justify-center">
-              <motion.div
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 1.2,
-                  delay: 0.5,
-                }}
-                className="h-8 w-8 rounded-full flex items-center justify-center"
-              >
-                <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-[#F7AB0A] animate-pulse" />
-              </motion.div>
-            </div>
-          </footer>
+
+          <Link href={"#hero"}>
+            <footer className="sticky bottom-5 w-full cursor-pointer">
+              <div className="flex items-center justify-center">
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.5,
+                  }}
+                  className="h-8 w-8 rounded-full flex items-center justify-center"
+                >
+                  <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-[#F7AB0A] animate-pulse" />
+                </motion.div>
+              </div>
+            </footer>
           </Link>
         </div>
       </Client>
@@ -115,7 +127,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
 
   return {
     props: {
-      
       pageInfo,
       experiences,
       courses,
