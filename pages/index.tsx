@@ -47,70 +47,71 @@ const Home = ({
 }: Props) => {
   return (
     <HydrationProvider>
-      <Suspense fallback={<div>Loading...</div>}> </Suspense>
-      <Client>
-        <div
-          className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
+      <Suspense fallback={<div>Loading...</div>}>
+        <Client>
+          <div
+            className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
       scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-amber-400/40"
-        >
-          <Head>
-            <title>Portfolio</title>
-            <link rel="icon" href="/react.ico" />
-          </Head>
+          >
+            <Head>
+              <title>Portfolio</title>
+              <link rel="icon" href="/react.ico" />
+            </Head>
 
-          <Header socials={socials} />
+            <Header socials={socials} />
 
-          <section id="hero" className="snap-start">
-            <Hero pageInfo={pageInfo} />
-          </section>
+            <section id="hero" className="snap-start">
+              <Hero pageInfo={pageInfo} />
+            </section>
 
-          <section id="about" className="snap-center">
-            <About pageInfo={pageInfo} />
-          </section>
+            <section id="about" className="snap-center">
+              <About pageInfo={pageInfo} />
+            </section>
 
-          <section id="experience" className="snap-center">
-            <Experiences experiences={experiences} />
-          </section>
+            <section id="experience" className="snap-center">
+              <Experiences experiences={experiences} />
+            </section>
 
-          <section id="courses" className="snap-center">
-            <Courses courses={courses} />
-          </section>
+            <section id="courses" className="snap-center">
+              <Courses courses={courses} />
+            </section>
 
-          <section id="skills" className="snap-start">
-            <Skills skills={skills} />
-          </section>
+            <section id="skills" className="snap-start">
+              <Skills skills={skills} />
+            </section>
 
-          <section id="projects" className="snap-start">
-            <Projects projects={projects} />
-          </section>
+            <section id="projects" className="snap-start">
+              <Projects projects={projects} />
+            </section>
 
-          <section id="contact" className="snap-start">
-            <Contact name={""} email={""} subject={""} message={""} />
-          </section>
+            <section id="contact" className="snap-start">
+              <Contact name={""} email={""} subject={""} message={""} />
+            </section>
 
-          <Link href={"#hero"}>
-            <footer className="sticky bottom-5 w-full cursor-pointer">
-              <div className="flex items-center justify-center">
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0.5,
-                  }}
-                  className="h-8 w-8 rounded-full flex items-center justify-center"
-                >
-                  <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-[#F7AB0A] animate-pulse" />
-                </motion.div>
-              </div>
-            </footer>
-          </Link>
-        </div>
-      </Client>
+            <Link href={"#hero"}>
+              <footer className="sticky bottom-5 w-full cursor-pointer">
+                <div className="flex items-center justify-center">
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                    }}
+                    transition={{
+                      duration: 1.2,
+                      delay: 0.5,
+                    }}
+                    className="h-8 w-8 rounded-full flex items-center justify-center"
+                  >
+                    <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-[#F7AB0A] animate-pulse" />
+                  </motion.div>
+                </div>
+              </footer>
+            </Link>
+          </div>
+        </Client>
+      </Suspense>
     </HydrationProvider>
   );
 };
