@@ -2,6 +2,7 @@
 import React from "react";
 import { Project as ProjectType } from "../typings";
 import { urlFor } from "../sanity";
+import Link from "next/link";
 
 type Props = {
   projects: ProjectType[];
@@ -30,7 +31,13 @@ const Projects = ({ projects }: Props) => {
                   <span className="underline decoration-[#F7AB0A]/50">
                     Projeto {index + 1} de {projects.length}:
                   </span>{" "}
-                  {project?.title}
+                  <a
+                    href={project.linkToBuild}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.title}
+                  </a>
                 </h4>
 
                 <div className="flex items-center space-x-2 justify-center">

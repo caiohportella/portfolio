@@ -15,6 +15,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
 import { fetchExperiences } from "../utils/fetchExperience";
+import { fetchCourses } from "../utils/fetchCourses";
 import {
   Course,
   Experience,
@@ -23,7 +24,6 @@ import {
   Skill,
   Social,
 } from "../typings";
-import { fetchCourses } from "../utils/fetchCourses";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
 import { Suspense } from "react";

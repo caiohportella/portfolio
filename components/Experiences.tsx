@@ -24,7 +24,7 @@ const Experience = ({ experiences }: Props) => {
         Experiência
       </h3>
 
-      <div className="justify-center flex w-screen space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-amber-400/40">
+      <div className="justify-center flex w-screen space-x-5 overflow-hidden p-10 snap-x snap-mandatory">
         {experiences?.map((experience) => (
           <ExperiencesCard key={experience._id} experience={experience} />
         ))}
