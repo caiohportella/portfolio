@@ -9,7 +9,7 @@ type Inputs = {
   message: string;
 };
 
-const Contact = (props: Inputs) => {
+const Contact = ({}: Inputs) => {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:caiohportella@gmail.com?subject=${formData.subject}&body=${formData.message}`;
@@ -17,32 +17,32 @@ const Contact = (props: Inputs) => {
 
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
         Contato
       </h3>
 
-      <div className="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 2xl:space-y-10">
-        <h4 className="text-4xl font-semibold text-center mt-10 mb-2">
+      <div className="flex flex-col space-y-4 sm:space-y-2 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
+        <h4 className="hidden sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
           Ficou interessado?{" "}
           <span className="decoration-[#F7AB0A]/50 underline">
             Mande uma mensagem
           </span>
         </h4>
 
-        <div className="space-y-8">
-          <div className="flex items-center space-x-5 justify-center">
+        <div className="space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
+          <div className="flex items-center space-x-12 justify-start">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">(11) 93018-0307</p>
+            <p className="text-lg md:text-2xl lg:text-2xl">(11) 93018-0307</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
+          <div className="flex items-center space-x-12 justify-start">
             <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Jundiaí, SP - Brasil</p>
+            <p className="text-lg md:text-2xl lg:text-2xl">Jundiaí, SP - Brasil</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
+          <div className="flex items-center space-x-12 justify-start">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">caiohportella@gmail.com</p>
+            <p className="text-lg md:text-2xl lg:text-2xl">caiohportella@gmail.com</p>
           </div>
         </div>
 
@@ -53,13 +53,13 @@ const Contact = (props: Inputs) => {
           <div className=" flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
             <input
               {...register("name")}
-              className="contactInput"
+              className="contactInput w-70 md:w-auto"
               type="text"
               placeholder="Nome"
             />
             <input
               {...register("email")}
-              className="contactInput"
+              className="contactInput w-70 md:w-auto"
               type="email"
               placeholder="Email"
             />

@@ -13,7 +13,7 @@ type Props = {
 const Hero = ({ pageInfo }: Props) => {
   const [text] = useTypewriter({
     words: [
-      `Olá! Sou o ${pageInfo?.name}`,
+      `${pageInfo?.name}`,
       "Desenvolvedor Fullstack",
       "Desenvolvedor Mobile",
     ],
@@ -24,30 +24,29 @@ const Hero = ({ pageInfo }: Props) => {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <div className="relative bottom-[1rem] mx-auto overflow">
-        <motion.img
-          initial={{
-            y: -400,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 2,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          src={urlFor(pageInfo?.heroImage).url()}
-          alt="profile pic"
-          className="h-32 w-32 rounded-full object-cover"
-        />
-      </div>
+      <motion.img
+        initial={{
+          y: -100,
+          opacity: 0,
+        }}
+        whileInView={{
+          y: 2,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1.2,
+        }}
+        viewport={{ once: true }}
+        src={urlFor(pageInfo?.heroImage).url()}
+        alt="profile pic"
+        className="h-32 w-32 rounded-full object-cover relative mx-auto"
+      />
 
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-5xl lg:6xl font-semibold px-10">
+        <h1 className="text-2xl md:text-5xl lg:6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
