@@ -10,7 +10,6 @@ type Props = {
 const About = ({ pageInfo }: Props) => {
 
   return (
-    //@ts-ignore
     <motion.div
       initial={{
         opacity: 0,
@@ -27,7 +26,7 @@ const About = ({ pageInfo }: Props) => {
         Sobre
       </h3>
 
-      {/* @ts-ignore */}
+      {/*   */}
       <motion.img
         initial={{
           x: -200,

@@ -11,7 +11,7 @@ type Props = {
 const CoursesCard = ({ course }: Props) => {
   return (
     <article className="flex flex-col drop-shadow-md rounded-lg items-center space-y-7 flex-shrink-0 w-96 md:w-[600px] xl:w[900px] mb-2 object-cover object-center snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
-      {/* @ts-ignore */}
+      {/*   */}
       <motion.img
         initial={{
           y: -100,

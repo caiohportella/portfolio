@@ -10,7 +10,6 @@ import Courses from "../components/Courses";
 import Experiences from "../components/Experiences";
 import { motion } from "framer-motion";
 import { HydrationProvider, Client } from "react-hydration-provider";
-import { Suspense } from "react";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
@@ -19,7 +18,8 @@ import { fetchExperiences } from "../utils/fetchExperience";
 import { Course, Experience, PageInfo, Project, Skill, Social } from "../typings";
 import { fetchCourses } from "../utils/fetchCourses";
 import Link from "next/link";
-import { HomeIcon, HomeModernIcon } from "@heroicons/react/24/solid";
+import { HomeIcon } from "@heroicons/react/24/solid";
+import { Suspense } from "react";
 
 type Props = {
   pageInfo: PageInfo;
@@ -105,7 +105,7 @@ const Home = ({ pageInfo, experiences, courses, skills, projects, socials }: Pro
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const courses: Course[] = await fetchCourses();
@@ -115,6 +115,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
+      
       pageInfo,
       experiences,
       courses,
