@@ -72,7 +72,7 @@ const Hero = ({ pageInfo }: Props) => {
             <button className="heroButton">Projetos</button>
           </Link>
 
-          <Link href={process.env.PUBLIC_URL + "CV.pdf"} target={"_blank"} download>
+          <Link href={process.env.NEXT_PUBLIC_BASE_URL + "CV.pdf"} target={"_blank"} download>
             <button className="heroButton">Baixar CV</button>
           </Link>
         </div>
