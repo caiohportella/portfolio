@@ -2,12 +2,15 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "../typings";
+import { useTranslations } from "next-intl";
 
 type Props = {
   socials: Social[];
 };
 
 const Header = ({ socials }: Props) => {
+  const t = useTranslations("Header");
+
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -64,7 +67,7 @@ const Header = ({ socials }: Props) => {
           bgColor="transparent"
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Entre em contato
+          {t("contact")}
         </p>
       </motion.div>
     </header>

@@ -1,0 +1,55 @@
+{
+  "Header": {
+    "contact": "Get in Touch"
+  },
+
+  "Hero": {
+    "role": "Computer Scientist",
+    "developerFullstack": "Fullstack Developer",
+    "developerMobile": "Mobile Developer",
+    "about": "About",
+    "experience": "Experience",
+    "courses": "Courses",
+    "skills": "Skills",
+    "projects": "Projects",
+    "downloadCV": "Download CV"
+  },
+
+  "About": {
+    "heading": "About",
+    "titleStart": "Know ",
+    "titleHighlight": "a little more",
+    "titleEnd": "about me",
+    "about": "I'm a bachelor in Computer Science from PUCSP and I am currently looking for professional experience and new learning to enter the job market. I am looking for a junior position where I can apply and expand my development skills frontend and fullstack, contributing to significant projects and company growth. I have a broad interest in technology, as well as all the doors it can open, currently focusing on web and mobile development."
+  },
+  
+  "Experience": {
+    "heading": "Experience"
+  },
+
+  "Courses": {
+    "heading": "Courses"
+  },
+
+  "Skills": {
+    "heading": "Skills"
+  },
+
+  "Projects": {
+    "heading": "Projects",
+    "project": "Project",
+    "of": "of",
+    "description": ""
+  },
+
+  "Contact": {
+    "heading": "Contact",
+    "subtitleStart": "Are you interested?",
+    "subtitleEnd": "Send me a message",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "button": "Send"
+  }
+}

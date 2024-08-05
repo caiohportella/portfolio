@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import React from "react";
 import { PageInfo as PageInfoType } from "../typings";
 import { urlFor } from "../sanity";
+import { useTranslations } from "next-intl";
 
 type Props = {
   pageInfo: PageInfoType;
 }
 
 const About = ({ pageInfo }: Props) => {
+
+  const t = useTranslations("About");
 
   return (
     <motion.div
@@ -23,7 +26,7 @@ const About = ({ pageInfo }: Props) => {
       className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
       <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
-        Sobre
+        {t("heading")}
       </h3>
 
       <motion.img
@@ -45,14 +48,15 @@ const About = ({ pageInfo }: Props) => {
 
       <div className="space-y-5 md:space-y-10 px-0 md:px-10">
         <h4 className="text-xl md:text-4xl font-semibold">
-          Conheça{" "}
+          {t("titleStart")}
           <span className="underline decoration-[#F7AB0A]/50">
-            um pouco mais
+            {t("titleHighlight")}
           </span>{" "}
-          sobre mim
+          {t("titleEnd")}
         </h4>
         <p className="text-sm md:text-lg max-h-fit">
-          {pageInfo?.backgroundInformation}
+          {/* {pageInfo?.backgroundInformation} */}
+          {t("about")}
         </p>
       </div>
     </motion.div>

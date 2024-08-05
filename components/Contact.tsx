@@ -1,6 +1,7 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useTranslations } from "next-intl";
 
 type Inputs = {
   name: string;
@@ -15,19 +16,21 @@ const Contact = ({}: Inputs) => {
     window.location.href = `mailto:caiohportella@gmail.com?subject=${formData.subject}&body=${formData.message}`;
   }
 
+  const t = useTranslations("Contact");
+
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
-        Contato
+        {t("heading")}
       </h3>
 
       <div className="flex flex-col space-y-4 sm:space-y-2 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
-        <h4 className="hidden sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
-          Ficou interessado?{" "}
+        {/* <h4 className="hidden sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
+          {t("subtitleStart")}{" "}
           <span className="decoration-[#F7AB0A]/50 underline">
-            Mande uma mensagem
+          {t("subtitleEnd")}
           </span>
-        </h4>
+        </h4> */}
 
         <div className="space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
           <div className="flex items-center space-x-12 justify-start">
@@ -55,13 +58,13 @@ const Contact = ({}: Inputs) => {
               {...register("name")}
               className="contactInput w-70 md:w-auto"
               type="text"
-              placeholder="Nome"
+              placeholder={t("name")}
             />
             <input
               {...register("email")}
               className="contactInput w-70 md:w-auto"
               type="email"
-              placeholder="Email"
+              placeholder={t("email")}
             />
           </div>
 
@@ -69,19 +72,19 @@ const Contact = ({}: Inputs) => {
             {...register("subject")}
             className="contactInput"
             type="text"
-            placeholder="Assunto"
+            placeholder={t("subject")}
           />
 
           <textarea
             {...register("message")}
             className="contactInput"
-            placeholder="Mensagem"
+            placeholder={t("message")}
           />
           <button
             type="submit"
             className="bg-[#F7AB0A] py-3 md:py-5 px-10 rounded-md text-black font-bold text-lg"
           >
-            Enviar
+            {t("button")}
           </button>
         </form>
       </div>

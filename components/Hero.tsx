@@ -5,21 +5,23 @@ import BackgroundCircles from "./BackgroundCircles";
 import { motion } from "framer-motion";
 import { PageInfo as PageInfoType } from "../typings";
 import { urlFor } from "../sanity";
+import { useLocale, useTranslations } from "next-intl";
 
 type Props = {
   pageInfo: PageInfoType;
 };
 
 const Hero = ({ pageInfo }: Props) => {
+  const t = useTranslations("Hero");
+  const locale = useLocale();
+
   const [text] = useTypewriter({
-    words: [
-      `${pageInfo?.name}`,
-      "Desenvolvedor Fullstack",
-      "Desenvolvedor Mobile",
-    ],
+    words: [`${pageInfo?.name}`, t("developerFullstack"), t("developerMobile")],
     loop: true,
     delaySpeed: 2000,
   });
+
+  const curriculumPath = locale === "en-US" ? "/Vitae.pdf" : "/Curriculum.pdf";
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
@@ -44,7 +46,8 @@ const Hero = ({ pageInfo }: Props) => {
 
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          {pageInfo?.role}
+          {/* {pageInfo?.role} */}
+          {t("role")}
         </h2>
         <h1 className="text-2xl md:text-5xl lg:6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
@@ -53,28 +56,42 @@ const Hero = ({ pageInfo }: Props) => {
 
         <div className="pt-5">
           <Link href="#about">
-            <button className="heroButton">Sobre</button>
+            <button className="heroButton">{t("about")}</button>
           </Link>
 
           <Link href="#experience">
-            <button className="heroButton">Experiência</button>
+            <button className="heroButton">{t("experience")}</button>
           </Link>
 
           <Link href="#courses">
-            <button className="heroButton">Cursos</button>
+            <button className="heroButton">{t("courses")}</button>
           </Link>
 
           <Link href="#skills">
-            <button className="heroButton">Habilidades</button>
+            <button className="heroButton">{t("skills")}</button>
           </Link>
 
           <Link href="#projects">
-            <button className="heroButton">Projetos</button>
+            <button className="heroButton">{t("projects")}</button>
           </Link>
 
-          <Link href={process.env.NEXT_PUBLIC_BASE_URL + "/Curriculum.pdf"} target={"_blank"} download>
-            <button className="heroButton">Baixar CV</button>
-          </Link>
+          {locale === "en-US" ? (
+            <Link
+              href={process.env.NEXT_PUBLIC_BASE_URL + "/Vitae.pdf"}
+              target={"_blank"}
+              download
+            >
+              <button className="heroButton">{t("downloadCV")}</button>
+            </Link>
+          ) : (
+            <Link
+              href={process.env.NEXT_PUBLIC_BASE_URL + curriculumPath}
+              target={"_blank"}
+              download
+            >
+              <button className="heroButton">{t("downloadCV")}</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

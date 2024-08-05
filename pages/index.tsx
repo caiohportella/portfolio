@@ -1,4 +1,5 @@
 import type { GetStaticProps } from "next";
+import { useTranslations } from "next-intl";
 import Head from "next/head";
 import About from "../components/About";
 import Header from "../components/Header";
@@ -35,6 +36,8 @@ type Props = {
   skills: Skill[];
   projects: Project[];
   socials: Social[];
+  messages: Record<string, string>;
+  locale: string;
 };
 
 const Home = ({
@@ -134,6 +137,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
       skills,
       projects,
       socials,
+      messages: (await import(`../messages/${locale}/common.json`)).default,
+      locale: locale || "pt-BR",
     },
     revalidate: 60,
   };

@@ -1,0 +1,55 @@
+{
+  "Header": {
+    "contact": "Entrar em contato"
+  },
+
+  "Hero": {
+    "role": "Cientista da Computação",
+    "developerFullstack": "Desenvolvedor Fullstack",
+    "developerMobile": "Desenvolvedor Mobile",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "courses": "Cursos",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "downloadCV": "Baixar CV"
+  },
+
+  "About": {
+    "heading": "Sobre",
+    "titleStart": "Conheça ",
+    "titleHighlight": "um pouco mais",
+    "titleEnd": "sobre mim",
+    "about": "Sou bacharel em Ciência da Computação pela PUCSP e atualmente estou em busca de experiência profissional e novos aprendizados para entrar no mercado de trabalho. Busco uma vaga júnior onde eu possa aplicar e aprimorar minhas habilidades de desenvolvimento frontend e fullstack, contribuindo para projetos significativos e o crescimento da empresa. Tenho um amplo interesse em tecnologia, bem como todas as portas que ela pode abrir, com foco atual em desenvolvimento web e mobile."
+  },
+
+  "Experience": {
+    "heading": "Experiência"
+  },
+
+  "Courses": {
+    "heading": "Cursos"
+  },
+
+  "Skills": {
+    "heading": "Habilidades"
+  },
+
+  "Projects": {
+    "heading": "Projetos",
+    "project": "Projeto",
+    "of": "de",
+    "description": ""
+  },
+
+  "Contact": {
+    "heading": "Contato",
+    "subtitleStart": "Se interessou?",
+    "subtitleEnd": "Envie uma mensagem",
+    "name": "Nome",
+    "email": "Email",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "button": "Enviar"
+  }
+}

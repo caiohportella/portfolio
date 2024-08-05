@@ -1,0 +1,10 @@
+{
+  "short_name": "Caio H. Portella",
+  "name": "Caio H. Portella - Portfolio",
+  "id": "/?source=pwa",
+  "start_url": "/",
+  "background_color": "#242424",
+  "display": "standalone",
+  "theme_color": "#F7AB0A",
+  "orientation": "portrait"
+}
