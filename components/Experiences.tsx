@@ -68,6 +68,7 @@ const Experience = ({ experiences }: Props) => {
       <div className="flex justify-between space-x-5 items-center w-full overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-amber-400/40 select-none">
         {experiences?.map((experience) => (
           <motion.div
+            key={experience._id}
             className="w-screen snap-center flex space-y-5 items-center justify-center p-20 h-screen select-none"
             animate={{ scale: isDragging ? 0.95 : 1 }}
             transition={{ duration: 0.2 }}
