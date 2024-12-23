@@ -3,15 +3,39 @@
 @tailwind utilities;
 
 @layer components {
-    .heroButton {
-        @apply px-3 md:px-6 py-2 m-1 border border-[#242424] rounded-full 
+  .heroButton {
+    @apply px-3 md:px-6 py-2 m-1 border border-[#242424] rounded-full 
         uppercase text-xs tracking-widest text-gray-500 transition-all 
         hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
-    }
-    
-    .contactInput {
-        @apply outline-none bg-slate-400/10 rounded-md border-b px-3 md:px-6 py-3 md:py-4 border-[#242424]
+  }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-md border-b px-3 md:px-6 py-3 md:py-4 border-[#242424]
         text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40
-        hover:border-[#F7AB0A]/40
-    }
+        hover:border-[#F7AB0A]/40;
+  }
+
+  .select-dropdown {
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    color: #ffffff; /* Tailwind's text-white */
+  }
+
+  .select-dropdown option {
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    color: #ffffff; /* Tailwind's text-white */
+  }
+
+  .select-dropdown option:checked {
+    background-color: #f7ab0a; /* Custom selected background color */
+    color: #000000; /* Custom selected text color */
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

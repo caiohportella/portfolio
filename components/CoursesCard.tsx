@@ -10,7 +10,7 @@ type Props = {
 
 const CoursesCard = ({ course }: Props) => {
   return (
-    <article className="flex flex-col drop-shadow-md rounded-lg items-center space-y-7 flex-shrink-0 w-96 md:w-[600px] xl:w[900px] mb-2 object-cover object-center snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <motion.div className="flex flex-col drop-shadow-md rounded-lg items-center space-y-7 flex-shrink-0 w-96 md:w-[600px] xl:w[900px] mb-2 object-cover object-center snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
       <motion.img
         initial={{
           y: -100,
@@ -27,7 +27,6 @@ const CoursesCard = ({ course }: Props) => {
           once: true,
         }}
         src={urlFor(course?.institutionImage).url()}
-
         className="w-32 h-32 xl:w-[200px] xl:h-[200px] object-cover object-center"
       />
 
@@ -43,7 +42,7 @@ const CoursesCard = ({ course }: Props) => {
           {formatCourseDate(course?.dateEnded)}
         </p>
       </div>
-    </article>
+    </motion.div>
   );
 };
 

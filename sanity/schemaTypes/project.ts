@@ -22,7 +22,19 @@ export default defineType({
     {
       name: "summary",
       title: "Summary",
-      type: "text",
+      type: "object",
+      fields: [
+        {
+          name: "en",
+          title: "English",
+          type: "text",
+        },
+        {
+          name: "pt",
+          title: "Portuguese",
+          type: "text",
+        },
+      ],
     },
     {
       name: "technologies",

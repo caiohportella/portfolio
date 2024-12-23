@@ -5,7 +5,8 @@ import BackgroundCircles from "./BackgroundCircles";
 import { motion } from "framer-motion";
 import { PageInfo as PageInfoType } from "../typings";
 import { urlFor } from "../sanity";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 
 type Props = {
   pageInfo: PageInfoType;
@@ -13,7 +14,7 @@ type Props = {
 
 const Hero = ({ pageInfo }: Props) => {
   const t = useTranslations("Hero");
-  const locale = useLocale();
+  const { locale } = useRouter();
 
   const [text] = useTypewriter({
     words: [`${pageInfo?.name}`, t("developerFullstack"), t("developerMobile")],
@@ -21,7 +22,7 @@ const Hero = ({ pageInfo }: Props) => {
     delaySpeed: 2000,
   });
 
-  const curriculumPath = locale === "en-US" ? "/Vitae.pdf" : "/Curriculum.pdf";
+  const curriculumPath = locale === "en-US" ? "/en-US/Vitae.pdf" : "/Curriculum.pdf";
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
@@ -46,7 +47,6 @@ const Hero = ({ pageInfo }: Props) => {
 
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          {/* {pageInfo?.role} */}
           {t("role")}
         </h2>
         <h1 className="text-2xl md:text-5xl lg:6xl font-semibold px-10">
@@ -75,23 +75,15 @@ const Hero = ({ pageInfo }: Props) => {
             <button className="heroButton">{t("projects")}</button>
           </Link>
 
-          {locale === "en-US" ? (
-            <Link
-              href={process.env.NEXT_PUBLIC_BASE_URL + "/Vitae.pdf"}
-              target={"_blank"}
-              download
-            >
-              <button className="heroButton">{t("downloadCV")}</button>
-            </Link>
-          ) : (
-            <Link
-              href={process.env.NEXT_PUBLIC_BASE_URL + curriculumPath}
-              target={"_blank"}
-              download
-            >
-              <button className="heroButton">{t("downloadCV")}</button>
-            </Link>
-          )}
+          <Link
+            href={curriculumPath}
+            locale={false}
+            download={locale === "en-US" ? "Vitae.pdf" : "Curriculum.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="heroButton">{t("downloadCV")}</button>
+          </Link>
         </div>
       </div>
     </div>

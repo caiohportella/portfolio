@@ -4,6 +4,7 @@ import { Project as ProjectType } from "../typings";
 import { urlFor } from "../sanity";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 
 type Props = {
   projects: ProjectType[];
@@ -16,7 +17,14 @@ const Projects = ({ projects }: Props) => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  const { locale } = useRouter();
+
+  const getLocalizedSummary = (project: ProjectType) => {
+    return locale === "en-US" ? project.summaryEN : project.summaryPT;
+  };
+
   const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
     setIsDragging(true);
     if (containerRef.current) {
       setStartX(e.pageX - containerRef.current.offsetLeft);
@@ -33,13 +41,11 @@ const Projects = ({ projects }: Props) => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    if (containerRef.current) {
-      const x = e.pageX - containerRef.current.offsetLeft;
-      const walk = (x - startX) * 2; // Adjust the scroll speed
-      containerRef.current.scrollLeft = scrollLeft - walk;
-    }
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault(); // Prevent default browser behavior
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust scroll sensitivity
+    containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
@@ -62,7 +68,6 @@ const Projects = ({ projects }: Props) => {
         onMouseMove={handleMouseMove}
         style={{
           cursor: isDragging ? "grabbing" : "grab",
-          scrollBehavior: "smooth",
         }}
       >
         {projects.map((project, index) => (
@@ -111,14 +116,14 @@ const Projects = ({ projects }: Props) => {
               </div>
 
               <p className="text-sm md:text-md lg:text-lg text-justify md:text-left select-none">
-                {project?.summary}
+                {getLocalizedSummary(project)}
               </p>
             </div>
           </motion.div>
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12 select-none"></div>
+      <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12 select-none" />
     </motion.div>
   );
 };

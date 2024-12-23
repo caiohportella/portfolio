@@ -5,6 +5,8 @@ import { groq } from "next-sanity";
 const query = groq`
     *[_type == 'experience'] {
       ...,
+      "jobTitleEN": jobTitle.en,
+      "jobTitlePT": jobTitle.pt,
       technologies[]->
     }
 `;

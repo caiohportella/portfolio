@@ -43,7 +43,7 @@ const About = ({ pageInfo }: Props) => {
         }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="Caio Portella"
-        className="-mb-24 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+        className="-mb-24 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
       />
 
       <div className="space-y-5 md:space-y-10 px-0 md:px-10">

@@ -5,6 +5,8 @@ import { groq } from "next-sanity";
 const query = groq`
     *[_type == 'project'] {
       ...,
+      "summaryEN": summary.en,
+      "summaryPT": summary.pt,
       technologies[]->
     }
 `;
