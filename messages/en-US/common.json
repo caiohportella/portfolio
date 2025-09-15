@@ -51,5 +51,13 @@
     "subject": "Subject",
     "message": "Message",
     "button": "Send"
+  },
+
+  "Index": {},
+
+  "NotFound": {
+    "heading": "404",
+    "subheading": "Page not found",
+    "goHome": "Go to the front page"
   }
 }
