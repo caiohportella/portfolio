@@ -8,4 +8,7 @@ export const localeConfig = defineRouting({
  
 export type Locale = (typeof localeConfig.locales)[number];
  
-export const {Link, redirect, permanentRedirect, usePathname, useRouter} = createLocalizedPathnamesNavigation(localeConfig);
+export const {Link, redirect, permanentRedirect, usePathname, useRouter} = createLocalizedPathnamesNavigation({
+  ...localeConfig,
+  pathnames: {},
+});
