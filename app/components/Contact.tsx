@@ -25,7 +25,7 @@ const Contact = () => {
         {t("heading")}
       </h3>
 
-      <div className="flex flex-col space-y-4 sm:space-y-2 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
+      <div className="flex flex-col space-y-4 sm:space-y-2 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10 items-center">
         {/* <h4 className="hidden sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
           {t("subtitleStart")}{" "}
           <span className="decoration-[#F7AB0A]/50 underline">
@@ -33,7 +33,7 @@ const Contact = () => {
           </span>
         </h4> */}
 
-        <div className="space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
+        <div className="pace-y-1 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
           <div className="flex items-center space-x-12 justify-start">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
             <p className="text-lg md:text-2xl lg:text-2xl">(11) 93018-0307</p>

@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience }: Props) => {
   const locale = useLocale();
 
   const getLocalizedJobTitle = (jobTitle: ExperienceType) => {
-    return locale === "en-US" ? jobTitle.jobTitleEN : jobTitle.jobTitlePT;
+    return locale === "en-US" ? jobTitle.jobTitle.en : jobTitle.jobTitle.pt;
   };
 
   return (
@@ -43,18 +43,17 @@ const ExperienceCard = ({ experience }: Props) => {
       <div className="md:px-10">
         <h4 className="text-4xl font-light">{experience?.company}</h4>
         <p className="font-bold text-2xl mt-1">{experience?.location}</p>
+        <p className="text-2xl mt-1 text-gray-400">
+          {getLocalizedJobTitle(experience)}
+        </p>
         <p className="uppercase py-5 text-gray-300">
           {formatDate(experience?.dateStarted)} -{" "}
           {experience?.dateEnded
             ? formatDate(experience?.dateEnded)
             : locale === "en-US"
-              ? "Present"
-              : "Presente"}
+            ? "Present"
+            : "Presente"}
         </p>
-
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>{getLocalizedJobTitle(experience)}</li>
-        </ul>
       </div>
     </article>
   );
